@@ -19,11 +19,11 @@
 	<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 	<script>
 	
-	function deleteIt(method,num) { 
+	function deleteIt(num) { 
 		
 		$.ajax({ 
 		url:'detail', 
-		method:method, /* 전송방식은 delete */
+		method:'delete',
 		data: {'num': num},
 		dataType:'text',
 		success:function (res){
@@ -66,19 +66,19 @@
 	</script>
 </head>
 <body>
-	<form action ="detail" method="post" onsubmit="javascript:updateIt();">
-			<p><label for="num">Content no</label>
+	<form method="post">
+			<p><label for="num">Num:</label>
 			<input type="text" name="num" id="num" value="${board.num}" readonly></p>
-			<p><label for="author">Written by</label>
+			<p><label for="author">Written by:</label>
 			<input type="text" name="author" id="author" value="${board.author}" readonly></p>
-			<p><label for="wdate">Written on</label>
+			<p><label for="wdate">Written on:</label>
 			<input type="text" name="wdate" id="wdate" value="${board.wdate}" readonly></p>
 			<p><label for="title">Title</label>
 			<input type="text" name="title" id="title" value="${board.title}" readonly></p>
 			<p><label for="contents">Contents</label>
-			<input type="text" name="contents" id="contents" value="${board.contents}"></p>
+			<input type="text" name="contents" id="contents" value="${board.contents}"></p>			
 			<p id="btn">
-				<button type="submit">Submit</button>
+				<button type="button" onclick="updateIt()">Submit</button>
 				<button type="reset">Cancel</button>
 			</p>
 	</form>
@@ -89,7 +89,7 @@
 	</div>
 	<p>
 		<a href="board">Main Page</a>
-		<a href="javascript:deleteIt('delete',${board.num});">Delete</a>
+		<a href="javascript:deleteIt('${board.num}');">Delete</a>
 	</p>
 </body>
 </html>
