@@ -1,6 +1,6 @@
 # Xmas_Guestbook
 
-1. Main page for the Guestbook
+1. Main page
 ![board_list](https://user-images.githubusercontent.com/74307093/100602452-3f24c100-3347-11eb-9999-02195317c5a4.png)
 
 2. Upload page
